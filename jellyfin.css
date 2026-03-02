@@ -1,0 +1,41 @@
+@import url('https://cdn.jsdelivr.net/gh/loof2736/scyfin@latest/CSS/scyfin-theme.css');
+
+/* =========================
+   HOME - retirer la tuile Musiques (sans trou)
+   ========================= */
+
+/* 1) On supprime le WRAPPER qui contient un lien vers Music */
+.homePage .cardBox:has(a[href*="#!/music"]),
+.homePage .cardBox:has(a[href*="/music"]),
+.homePage .itemsContainer > *:has(a[href*="#!/music"]),
+.homePage .itemsContainer > *:has(a[href*="/music"]) {
+  display: none !important;
+}
+
+/* 2) On évite le layout "space-between" qui crée des espaces chelous */
+.homePage .itemsContainer {
+  justify-content: flex-start !important;
+  gap: 16px !important;
+}
+
+/* 3) Cache aussi l’entrée Musiques dans le menu de gauche */
+.drawer a[href*="#!/music"],
+.drawer a[href*="/music"],
+.mainDrawer a[href*="#!/music"],
+.mainDrawer a[href*="/music"] {
+  display: none !important;
+}
+
+/* ================================================
+   PLAYLISTS: ne garder que celles contenant f2c__
+   ================================================ */
+
+.itemsContainer .card[data-type="Playlist"]:not(
+  :has(
+    .textActionButton[title*="f2c__"],
+    .cardImageContainer[aria-label*="f2c__"],
+    [data-path*="f2c__"]
+  )
+) {
+  display: none !important;
+}

@@ -1,7 +1,3 @@
-# jellyfin-my-template
-Jellyfin CSS that layers Scyfin with small tweaks: hides Music from Home and sidebar, tightens card layout, and keeps only playlists matching f2c__.
-
-
 # Jellyfin CSS Tweaks
 
 This repo contains a small set of Jellyfin UI tweaks layered on top of the Scyfin theme.
